@@ -1,0 +1,17 @@
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\BLL.deps.json
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\BLL.dll
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\BLL.pdb
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\DAL.dll
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\Model.dll
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\DAL.pdb
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\bin\Debug\net6.0\Model.pdb
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.dll
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\refint\BLL.dll
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\BLL.pdb
+E:\BTL-DoAn\BTL_API\WebAdmin\BLL\obj\Debug\net6.0\ref\BLL.dll

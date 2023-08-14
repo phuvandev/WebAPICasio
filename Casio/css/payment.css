@@ -1,0 +1,119 @@
+/*Container thanh toán*/
+#container-thanhtoan{
+	width: 1004px;
+	min-height: 520px;
+	margin: 0px auto;
+	margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#alert-1{
+    width: 100%;
+	height: 44px;
+	padding-left: 20px;
+    line-height: 44px;
+	border-radius: 5px;
+    border: 1px solid #b8daff;
+	background-color: #cce5ff;
+}
+#alert-1 a{
+    font-size: 14px;
+    color: #004085;
+}
+
+#thongtin-thanhtoan {
+	width: 100%;
+	height: 380px;
+    margin-top: 0px;
+	padding-top: 10px;
+	padding-left: 15px;
+	border: 1px solid #CCC;
+	float: left;
+}
+
+#thongtin-thanhtoan span {
+	font-size: 18px;
+	font-weight: bold;
+	color: red;
+}
+#thongtin-thanhtoan p {
+    margin-left: 200px;
+	font-size: 16px;
+}
+input:focus {
+    outline: none;
+    font-size: 16px;
+}
+#thongtin-thanhtoan input {
+	width: 560px;
+    height: 30px;
+	margin-right: 30px;
+	float: right;
+	border-radius: 4px;
+	border: 1px solid #CCC;
+}
+
+
+#total-payment {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    padding-left: 620px;
+}
+#text-total {
+    color: #000000;
+}
+#number-total {
+    font-weight: bold;
+    color: #EC1C24;
+}
+
+#form-check {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#form-check a{
+    color: #000000;
+    font-size: 14px;
+}
+
+
+#option-payment {
+	width: 100%;
+	height: 50px;
+	float: left;
+    margin-bottom: 20px;
+}
+#return {
+    width: 355px;
+	height: 100%;
+	border-radius: 10px;
+	border: none;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+	margin-left: 90px;
+	background-color: #EC1C24;
+}
+#continue {
+	width: 355px;
+	height: 100%;
+	border-radius: 10px;
+	border: none;
+	color: #FFF;
+    float: right;
+	font-size: 16px;
+	font-weight: bold;
+	margin-right: 90px;
+	background-color: #EC1C24;
+}
+
+.button-thanhtoan:hover {
+	background-color: red;
+}

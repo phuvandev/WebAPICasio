@@ -1,0 +1,179 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>CASIO VĂN PHÚ - GIỎ HÀNG</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/cart.css" />
+	<link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+
+	<script src="angular/angular.min.js"></script>
+	<script src="angular/global.js"></script>
+	<script src="angular/cart.js"></script>
+	</head>
+	<body ng-app="AppBanDongHoCasio" ng-controller="CartCtrl">
+		<div id="frame">
+			<!---------------------------------------HEADER--------------------------------------------------------->
+			<div id="header">
+                <div id="header-top">
+                    <div id="frame_ls">
+                        <div id="login-signup">
+                            <a id="text-ls" href="login.html"><i class="fas fa-user"></i>Đăng nhập/Đăng ký</a>
+                            <a href="" id="text-dx"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="header-middle">
+                    <a href="index.html"><img id="anh-logo" src="cus_images/logoVPW.png" /></a>
+                    <img id="anh-logoNCC" src="cus_images/logoNCC.png" />
+    
+                    <div id="icon-search">
+                        <i class="fa fa-search"></i>
+                    </div>
+    
+                    <input id="text-search" type="text" placeholder="Tìm kiếm sản phẩm" ng-model="searchByName"/>
+                    <input id="btn-search" type="submit" value="Tìm kiếm" ng-click="Search(searchByName)"/>
+    
+                    <div id="contact">
+                        <img id="anh-tainghe" src="cus_images/img-phone.png" />
+                        <a href="tel:1900111222">Liên hệ</a>
+                        <a href="tel:1900111222">1900.111.222</a>
+                    </div>
+    
+                    <div id="cart">
+                        <a href="cart.html"><img id="anh-giohang" src="cus_images/img-cart.png" /></a>
+                        <a class="info-cart" id="giohang" href="cart.html">Giỏ hàng </a>
+                        <a class="info-cart" id="soluong">{{soluong}}</a>
+                    </div>
+                </div>
+                <!----------------------------------------MENU--------------------------------------------------->
+                <div id="menu">
+                    <div id="main-menu">
+                          <ul ng-repeat="s in listMenu">
+                            <li ng-if="$index == 0"> 
+                                <a id ="menu1">
+                                    <i class="fas fa-bars"></i>
+                                    <span>{{s.tenMenu}}</span>
+                                </a>							
+                                <ul id="subcate">
+                                    <li><a href="dongsanpham.html?id=1">G-SHOCK</a></li>
+                                    <li><a href="dongsanpham.html?id=2">BABY-G</a></li>
+                                    <li><a href="dongsanpham.html?id=3">EDIFICE</a></li>
+                                    <li><a href="dongsanpham.html?id=4">SHEEN</a></li>
+                                    <li><a href="dongsanpham.html?id=5">GENERAL</a></li>
+                                    <li><a href="dongsanpham.html?id=6">PRO TREK</a></li>
+                                </ul>
+                            </li>
+                            <li ng-if="$index > 0">
+                                <a href="{{s.link}}">{{s.tenMenu}}</a>
+                            </li>
+                         </ul>
+                    </div>    
+                </div>
+            </div>
+			
+			<!-------------------------------------------Container------------------------------------------------>
+			<div id="container">
+                <div id="move">	
+					<a id="icon-home" href="index.html"><i class="fas fa-home"></i></a> 
+					<a class="text" href="index.html">TRANG CHỦ</a> 
+					<a id="icon-move"><i class="fas fa-angle-right"></i></a>
+					<a class="text" href="cart.html">GIỎ HÀNG</a>		
+				</div>
+                <div ng-if="listcart.length == 0" id="container-cart">
+                    <h2>Không có sản phẩm nào, vui lòng chọn mua sản phẩm! </h2>
+                </div>
+                <div ng-if="listcart.length != 0" id="container-cart">
+                    <h3>GIỎ HÀNG</h3>
+                    <!--Bảng lưu trữ sản phẩm mua-->
+                    <div id="content-cart">
+                        <table id="danhsach">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Ảnh sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
+                                    <th>Xóa</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataProduct" ng-repeat="(STT, a) in listcart"> <!--Dữ liệu đổ ra-->
+                                <tr class='cotnay'> 
+                                    <td>{{STT + 1}}</td>
+                                    <td><a href="chitietsanpham.html?id={{a.maSP}}"><img class='cart-item-img' ng-src='cus_images/SP/{{a.anhDaiDien}} '/></a></td>
+                                    <td>{{a.tenSP}}</td>
+                                    <td class='price-item'>{{a.giaMua|number:1.0-3}} đ</td>
+                                    <td>
+                                        <input class='nutgiam' type='button' value='-' ng-click="giamsl(a)" />
+                                        <input class= 'txtsoluong' type = 'text' readonly="true" value='{{a.soLuong}}' />
+                                        <input class='nuttang' type='button' value='+' ng-click="tangsl(a)" />
+                                    </td >
+                                    <td class='allprice'><span>{{a.giaMua * a.soLuong|number:1.0-3}} đ</span></td>
+                                    <td><img class='thungrac' src='cus_images/thungrac.png' ng-click="deleteItem(a)"/></td>
+                                </tr >
+                            </tbody>   
+                        </table>
+                    </div>
+
+                    <!--Thông tin -->
+                    <div id="pay-cart">
+                        <div id="option-cart">
+                            <input class="button" type="button" onclick="window.location.href='index.html'" value="TIẾP TỤC MUA HÀNG">
+                            <input class="button" id="capnhatlai" type="button" value="XÓA HẾT SẢN PHẨM" ng-click="deleteAll()">
+                            <input class="button" id="dathang" type="submit" value="ĐẶT HÀNG" ng-click="goToPayMent()">
+
+                        </div>
+                    </div>
+                </div>
+            </div>	
+
+
+            <!----------------------------------------footer---------------------------------------------->
+            <div id="footer">
+                <div id="info-website">
+                    <!--info 1-->
+                    <div id="info1">
+                        <span><b>CASIO VĂN PHÚ</b></span><br />
+                        <a>Địa chỉ: Số 2/24/441, Phường Bình Hàn, Thành phố Hải Dương.</a><br /><br />
+                        <a>Tư vấn mua hàng (8:00-17:00): 1900.111.222 (Phím 1) </a><br /><br />
+                        <a>Chăm sóc khách hàng: 1900.111.222 (Phím 2) </a><br /><br />
+                        <a>Gmail: phuphamvan411@gmail.com</a>
+                    </div>
+                    <!--info 2-->
+                    <div id="info2">
+                        <span><b>THÔNG TIN</b></span><br />
+                        <a href="gioithieu.html">Giới thiệu</a><br /><br />
+                        <a href="#">Lịch sử hình thành </a><br /><br />
+                        <a href="#">Tầm nhìn và sứ mệnh</a><br /><br />
+                        <a href="#">Website Casio</a>
+                    </div>
+                    <!--info 3-->
+                    <div id="info2">
+                        <span><b>HỖ TRỢ</b></span><br />
+                        <a href="#">Hướng dẫn thanh toán</a><br /><br />
+                        <a href="#">Hướng dẫn mua hàng online</a><br /><br />
+                        <a href="#">Chính sách khách hàng thân thiết</a><br /><br />
+                    </div>
+                    <!--info 4-->
+                    <div id="info2">
+                        <span><b>CHÍNH SÁCH</b></span><br />
+                        <a href="#">Điều khoản dịch vụ</a><br /><br />
+                        <a href="#">Quy định đổi trả</a><br /><br />
+                        <a href="#">Quy định bảo hành</a><br /><br />
+                        <a href="#">Trung tâm bảo hành</a><br /><br />
+                        <a href="#">Chính sách bảo mật</a>
+                    </div>
+                    <img id="anh-logo-casio" src="cus_images/casio-authorized.png" />
+                    <img id="anh-pay" src="cus_images/payment.png" />
+                </div>
+            </div>
+            <div id="banquyen">
+                <div id="copyright">
+                    <a href=""><img id="logo-banquyen" src="cus_images/logoVPW.png" /></a>
+                    <a>@Bản quyền thuộc về CASIO Văn Phú - Developed by VP.</a>
+                </div>
+            </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,174 @@
+#content-cttt {
+	width: 1002px;
+	min-height: 660px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px auto;
+	margin-bottom: 20px;
+}
+#content-left1{
+	width: 680px;
+	min-height: 620px;
+	float: left;
+	margin: 10px 0px 0px 0px;
+	box-shadow: 0px 0px 10px #CCC;
+	background-color: #f4f8fa;
+}
+#content-left-title1 {
+	width: 100%;
+	min-height: 40px;
+	margin-top: 10px;
+	float: left;
+	padding-left: 7px;
+}
+#content-left-title1 span {
+	font-size: 24px;
+}
+#content-left-note{
+	width: 100%;
+	height: 34px;
+	margin: 0px 0px 20px 0px;
+	float: left;
+	padding: 10px 10px;
+	line-height: 16px;
+}
+#content-left-note i {
+	color: #777777;
+}
+#content-left-note a {
+	font-size: 15px;
+	color: #777777;
+	margin-right: 14px;
+}
+#content-left1 p {
+	font-size: 16px;
+	margin-left: 7px;
+}
+
+#frame-pic1{
+	width: 660px;
+	height: 520px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 16px;
+	border: 1px solid #CCC;
+}
+#picture-cttt {
+	width: 650;
+	height: 510px;
+	margin: 5px;
+}
+
+
+
+
+/*-----------------------------------------------------*/
+#content-right1{
+	width: 302px;
+	min-height: 720px;
+	margin: 10px 0px 20px 20px;
+	float: left;
+}
+
+.content-right-title1{
+	width: 100%;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	background-color: #365DB5;
+}
+.content-right-title1 a{
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+#content-right-d1 {
+	width: 100%;
+	height: 484px;
+	float: left;
+	margin-bottom: 60px;
+}
+.crd1 {
+	width: 100%;
+	height: 100px;
+	float: left;
+	margin-top: 10px;
+	position: relative;
+}
+.crd1 img{
+	width: 100px;
+	height: 100%;
+	position: absolute;
+	top: 0px; 
+	left: 0px;
+}
+#article-title{
+	color: #000000;
+	font-size: 15px;
+	position: absolute;
+	top: 6px;
+	left: 114px;
+}
+#article-title:hover {
+	color: #EC1C24;
+	transition: 0.4s;
+}
+#see-more{
+	width: 100%;
+	height: 24px;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+	margin-top: 20px;
+	border-top: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+}
+#see-more a{
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+}
+#see-more a:hover{
+	color: #EC1C24;
+	transition: 0.5s;
+}
+
+/*---------------------Sản phẩm mới --------------*/
+/* #content-right-d2 {
+	width: 100%;
+	height: 440px;
+	float: left;
+}
+.crd2 {
+	width: 100%;
+	height: 100px;
+	float: left;
+	margin-top: 10px;
+	position: relative;
+}
+.crd2 img{
+	width: 100px;
+	height: 100%;
+	float: left;
+	margin-left: 20px;
+}
+.crd2 a{
+	color: #000000;
+	font-size: 16px;
+	position: absolute;
+	top: 26px;
+	left: 150px;
+}
+.crd2 a:hover{
+	color: #EC1C24;
+	transition: 0.3s;
+}
+	.crd2 p {
+		color: #EC1C24;
+		font-weight: bold;
+		position: absolute;
+		font-size: 16px;
+		top: 50px;
+		left: 150px;
+	} */

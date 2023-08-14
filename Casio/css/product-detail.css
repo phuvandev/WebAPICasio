@@ -1,0 +1,361 @@
+#content1-dt {
+	width: 1500px;
+	height: 600px;
+	margin: 0px auto;
+	margin-top: 10px;
+}
+
+/*--------------------------Phân khúc sản phẩm*/
+#product-segment{
+	width: 132px;
+	height: 600px;
+	float: left;
+	margin-left: 168px;
+	overflow-y: scroll;
+}
+
+#product-segment::-webkit-scrollbar {
+	width: 6px;
+	border-radius: 8px;
+	background-color: #EEE;
+}
+
+#product-segment::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #AAA;
+}
+.segment {
+	width: 120px;
+	height: 116px;
+	float: left;
+	margin-top: 10px;
+	border: 1px solid #AAA;
+	cursor: pointer;
+	position: relative; /* thêm thuộc tính position */
+}
+  
+#click-segment {
+	position: absolute; /* thêm thuộc tính position và set left, top */
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	border: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	background-color: white;
+	padding: 0px; /* set padding = 0 */
+}
+  
+#pic-segment {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+  
+/* #click-segment2{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	cursor: pointer;
+	background-color: #FFFFFF;
+} */
+
+
+/*------------------------------------------Show phân khúc */
+#product-show {
+	width: 630px;
+	height: 600px;
+	float: left;
+	position: relative;
+	margin-left: 20px;
+}
+
+#show-segment {
+	width: 630px;
+	height: 600px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+}
+/* #show-segment2 {
+	width: 630px;
+	height: 600px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+} */
+
+/*----------------------------Thông tin về sản phẩm */
+#product-info-dt {
+	width: 360px;
+	height: 600px;
+	margin-top: 0px;
+	margin-left: 28px;
+	float: left;
+}
+#product-name-dt {
+	width: 100%;
+	height: 130px;
+	padding: 10px 0px 0px 0px;
+	position: relative;
+}
+#text-title-dt {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 22px;
+	text-align: left;
+	color: #343A40;
+}
+#text1-dt {
+	position: absolute;
+	top: 70px;
+	left: 0px;
+	font-size: 18px;
+	color: #343A40;
+}
+#text2-dt {
+	font-size: 18px;
+	position: absolute;
+	top: 70px;
+	left: 130px;
+	font-size: 18px;
+	color: #343A40;
+}
+#text3-dt {
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	font-size: 18px;
+	color: #343A40;
+}
+#text4-dt {
+	font-size: 18px;
+	position: absolute;
+	top: 100px;
+	left: 40px;
+	font-size: 18px;
+	color: #EC1C24;
+}
+/*-------------Thêm vào giỏ hàng------------------*/
+#product-info-form {
+	width: 100%;
+	height: 126px;
+	float: left;
+	margin-top: 20px;
+	padding-top: 10px;
+}
+
+#product-info-form span {
+	font-size: 18px;
+}
+#number {
+	width: 90px;
+	height: 30px;
+	text-align: center;
+}
+input:focus {
+	outline: 0;
+}
+
+#addToCart {
+	width: 100%;
+	height: 66px;
+	margin-top: 20px;
+	text-align: center;
+	border-radius: 8px;
+	cursor: pointer;
+	border: none;
+	position: relative;
+	background-color: #f59000;
+}
+
+#addToCart span {
+	position: absolute;
+	top: 14px;
+	left: 80px;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: time new roman;
+}
+#addToCart p {
+	position: absolute;
+	top: 24px;
+	left: 64px;
+	color: #FFFFFF;
+	font-size: 14px;
+}
+/*--------------------------------------------------Thông tin thêm --------------------------------------------------------*/
+#product-info-other {
+	width: 100%;
+	height: 126px;
+	margin-top: 60px;
+	float: left;
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
+#info-other {
+	width: 344px;
+	height: 35px;
+	margin: 0px auto;
+	padding-left: 14px;
+	text-align: left;
+	border-bottom: 1px solid #CCC;
+}
+#info-other i{
+	margin-right: 16px;
+	color: #1da1f2;
+}
+#info-other a{
+	font-size: 16px;
+	line-height: 46px;
+	color: #343A40;
+}
+#info-other a:hover{
+	color: #EC1C24;
+	transition: 0.4s;
+}
+
+/*----------------------------------------------------------Content 2 */
+#content2-dt {
+	width: 1500px;
+	min-height: 200px;
+	margin: 0px auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex; /*các phần tử con bên trong sẽ được hiển thị theo cách mà mình định nghĩa*/
+  	flex-wrap: wrap; /*cho phép các phần tử con chuyển sang hàng mới nếu không đủ chỗ trên hành hiện tại.*/
+}
+#left{
+	width: 796px;
+	min-height: 100px;
+	margin-left: 148px;
+	float: left;
+}
+#tab{
+	width: 776px;
+	height: 50px;
+	margin-left: 14px;
+	border-bottom: 1px solid #CCC;
+}
+#tab-box{
+	width: 100px;
+	height: 100%;
+	line-height: 50px;
+	text-align: center;
+	border-bottom: 3px solid #F75006;
+}
+#tab-box a{
+	font-size: 20px;
+	color: #FF0000;
+}
+
+/*----------------------- Giới thiệu sản phẩm*/
+#product-intro {
+	width: 776px;
+	height: 500px;
+	margin-left: 14px;	
+	overflow-y: scroll;
+}
+#product-intro::-webkit-scrollbar {
+	width: 4px;
+	border-radius: 8px;
+	background-color: #EEE;
+}
+
+#product-intro::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #AAA;
+}
+#text-pi1{
+	color: #EC1C24;
+	font-size: 24px;
+	font-weight: 600;
+}
+#text-pi2{
+	color: #EC1C24;
+	font-size: 24px;
+	font-weight: 600;
+}
+#text-pi2:hover{
+	text-decoration: underline;
+}
+#text-pi3{
+	font-weight: bold;
+	font-size: 24px;
+	color: #004080;
+}
+#product-intro p {
+	color: #000000;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+/*--------------------- Thông số sản phẩm */
+#right {
+	width: 364px;
+	min-height: 100px;
+	margin-left: 32px;
+	float: left;
+	display: flex;          /*các phần tử con bên trong sẽ được hiển thị theo cách mà mình định nghĩa*/
+  	flex-wrap: wrap;          /*cho phép các phần tử con chuyển sang hàng mới nếu không đủ chỗ trên hành hiện tại*/
+}
+/* #product-specification{
+	width: 100%;
+	height: 50px;
+	float: left;
+	text-align: center;
+	background-color: #F8F9FA;
+}
+#product-specification a{
+	color: #FF0000;
+	font-size: 16px;
+	line-height: 50px;
+	font-weight: bold;
+}
+#product-specification a:hover{
+	color: #CC3333;
+} */
+
+/* #frame-ps-text{
+	width: 100%;
+	min-height: 100px;
+	display: flex; /*các phần tử con bên trong sẽ được hiển thị theo cách mà mình định nghĩa
+  	flex-wrap: wrap; /*cho phép các phần tử con chuyển sang hàng mới nếu không đủ chỗ trên hành hiện tại
+	margin-bottom: 40px;
+	
+}
+#ps-text1 {
+	width: 100%;
+	height: 40px;
+	float: left;
+	text-align: left;
+	padding-left: 4px;
+	display: grid; /*----------Chia bề mặt của phần tử thành một lưới (grid) gồm các hàng và cột
+	grid-template-columns: 50% 50%; /*---------2 cột kích thước bằng nhau 
+	line-height: 38px;
+}
+#ps-text1 a{
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+}
+#ps-text2 {
+	width: 100%;
+	height: 60px;
+	float: left;
+	padding-left: 4px;
+	text-align: left;
+	display: grid;
+	grid-template-columns: 50% 50%; 
+	line-height: 30px;
+}
+#ps-text2 a{
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+} */
+

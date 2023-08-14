@@ -1,0 +1,211 @@
+#container-signup{
+	width: 1511px;
+	height: 708px;
+	margin: 0px auto;
+	background-image: url('bg.jpg');
+	
+	text-align: justify;
+	position: relative;
+}
+#color-content-signup {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(37, 37, 37, 0.5);
+}
+#left-signup {
+	width: 50%;
+	height: 708px;
+	float: left;
+	background-color: #252525CC;
+}
+#content-left-signup {
+	width: 480px;
+	height: 534px;
+	margin: 0px auto;
+	color: #FFFFFF;	
+}
+#text1-signup {
+	color: #FFFFFF;
+	font-size: 34px;
+}
+#text2-signup {
+	font-size: 40px;
+	text-transform: uppercase; /* viết hoa */
+	color: #EC1C24;
+}
+#info-log {
+	width: 100%;
+	height: 60px;
+	font-size: 24px;
+	margin-top: 20px;
+	text-align: 10px;
+	padding-left: 10px;
+	border-left: 2px solid #EC1C24;
+}
+#log{
+	width: 480px;
+	height: 120px;
+	margin: 0px auto;
+	margin-top: 0px;
+}
+#question-signup {
+	font-size: 24px;
+	color: #FFFFFF;
+}
+#log-now{
+	width: 100%;
+	height: 70px;
+	color: #FFFFFF;
+	margin-top: 16px;
+}
+#text-log {
+	color: #FFFFFF;
+	font-size: 24px;
+	line-height: 70px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	border-radius: 14px;
+	background-color: #555555;
+}
+#text-log:hover{
+	background-color: #EC1C24;
+}
+#back-signup {
+	width: 80px;
+	height: 100px;
+	position: absolute;
+	bottom: 14px;
+	left: 20px;
+}
+#icon-back-signup {
+	width: 100%;
+	height: 100%;
+}
+
+/*------------------------Phần bên phải-------------------*/
+#right-signup {
+	width: 50%;
+	height: 708px;
+	float: left;
+}
+#content-right-signup {
+	width: 480px;
+	height: 690px;
+	margin: 0px auto;
+	margin-top: 4px;
+}
+#logo-signup{
+	width: 480px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+#logo-VPW-signup {
+	width: 140px;
+	height: 100%;
+}
+/*----bỏ viền khi ấn vào---*/
+input:focus{
+	outline:0;
+}
+.content-signup {
+	width: 450px;
+	height: 54px;
+	margin: 0px auto;
+	margin-bottom: 30px;
+	position: relative;
+}
+.frame-left-signup {
+	width: 220px;
+	height: 100%;
+	border-radius: 14px;
+}
+.frame-right-signup {
+	width: 220px;
+	height: 100%;
+	border-radius: 14px;
+	position: absolute;
+	top: 0px;
+	left: 230px;
+}
+.text-sc-signup {
+	width: 220px;
+	height: 100%;
+	border-radius: 14px;
+	border: 0px;
+	font-size: 18px;
+	padding-left: 20px;
+	background-color: #E8F0FE;
+}
+#s-c2 {
+	margin-top: 20px;
+}
+
+.text-c-signup {
+	width: 100%;
+	height: 100%;
+	border-radius: 14px;
+	border: 0px;
+	font-size: 18px;
+	padding-left: 20px;
+	background-color: #E8F0FE;
+}
+#warning-signup-s {
+	width: 225px;
+	height: 20px;
+	float: left;
+	position: relative;
+	margin-top: 5px;
+}
+.warning-text-signup1 {
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	color: #FFB119;
+	font-weight: bold;
+}
+#warning-signup {
+	width: 400px;
+	height: 20px;
+	float: left;
+	position: relative;
+	margin-top: -25px;
+	margin-left: 14px;
+}
+.warning-text-signup2 {
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	color: #FFB119;
+	font-weight: bold;
+}
+
+/*ĐĂNG KÝ TÀI KHOẢN*/
+#signup-signup {
+	width: 450px;
+	height: 70px;
+	margin: 8px 0px 0px 14px;
+	line-height: 70px;
+	border-radius: 14px;
+	border: 0px;
+	text-decoration: none;
+	font-size: 24px;
+	color: #FFFFFF;
+	cursor: pointer;
+	background-color: #EC1C24;
+}
+#signup-signup i{
+	font-size: 24px;
+	color: #FFFFFF;
+	float: left;
+	margin: 21px -90px 0px 100px;
+}
+#signup-signup a{
+	font-size: 20px;
+	font-weight: bold;
+}

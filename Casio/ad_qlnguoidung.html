@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="ad_images/favicon.ico" type="image/ico" />
+    <title>Quản lý | Người dùng </title>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.min.css" rel="stylesheet">
+
+    <script src="angular/angular.min.js"></script>
+		<script src="angular/global.js"></script>
+		<script src="angular/ad_nguoidung.js"></script>
+
+    <!--Kiểm tra đăng nhập và đăng xuất-->
+    <script src="js/java_checkLoginAdmin.js"></script>
+
+    <script>
+      if (JSON.parse(localStorage.getItem("user")).loaiquyen !== "Quản trị") {
+        alert('Bạn không có quyền truy cập trang này!');
+        window.location.href = 'ad_index.html'; 
+      }
+
+    </script>
+
+  </head>
+
+  <body class="nav-md" ng-app="AppBanDongHoCasio" ng-controller="AdNguoiDungCtrl">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="ad_index.html" class="site_title"><i class="fa fa-paw"></i> <span> Quản trị Web</span></a>
+            </div>
+      
+            <div class="clearfix"></div>
+      
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="ad_images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Chào mừng,</span>
+                <h2>{{ tenND }}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+      
+            <br />
+      
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>Tổng quan</h3>
+                <ul class="nav side-menu">
+                  <li><a href="ad_index.html"><i class="fa fa-home"></i> Trang chủ </a>
+                    
+                  </li>
+      
+                  <li><a><i class="fa fa-desktop"></i> Quản lý giao diện <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="ad_qlmenu.html">Quản lý Menu</a></li>
+                      <li><a href="ad_qlslide.html">Quản lý Slide</a></li>
+                      <li><a href="ad_qlgioithieu.html">Quản lý Giới thiệu</a></li>
+                      <li><a href="ad_qltintuc.html">Quản lý Tin tức</a></li>
+                      <li><a href="ad_qllienhe.html">Quản lý Liên hệ</a></li>
+                    </ul>
+                  </li> 
+                  <li><a><i class="fa fa-cube"></i>Quản lý sản phẩm <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="ad_qldongsanpham.html">Quản lý Dòng sản phẩm</a></li>
+                      <li><a href="ad_qlsanpham.html">Quản lý Sản phẩm</a></li>
+                      <li><a href="ad_qlctanhsanpham.html">Quản lý Chi tiết ảnh</a></li>
+                      <li><a href="ad_qlgiasanpham.html">Quản lý Giá sản phẩm</a></li>
+                      <li><a href="ad_qlgiamgia.html">Quản lý Giảm giá</a></li>
+                    </ul>
+                  </li>
+                  
+                  <li><a><i class="fa fa-users"></i>Quản lý nhân sự <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="ad_qlnhacungcap.html">Quản lý Nhà cung cấp</a></li>
+                      <li><a href="ad_qlnguoidung.html">Quản lý Người dùng</a></li>
+                      <li><a href="ad_khachhang.html">Thông tin Khách hàng</a></li>
+                    </ul>
+                  </li>
+                 
+                  <li><a><i class="fa fa-check-square-o"></i> Quản lý Nhập/Xuất <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="ad_qlhoadonnhap.html">Quản lý Hóa đơn nhập</a></li>
+                      <li><a href="ad_qlkho.html">Quản lý Kho</a></li>
+                      <li><a href="ad_qldonhang.html">Quản lý Đơn hàng</a></li>
+                    </ul>
+                  </li>
+                  
+              </div>
+              <div class="menu_section">
+                <h3>Khác</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> Các trang khác <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#">Thương mại điện tử</a></li>
+                      <li><a href="#">Dự án</a></li>
+                      <li><a href="#">Liên lạc</a></li>
+                      <li><a href="#">Hồ sơ</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-windows"></i> Tiện ích bổ sung <span class="fa fa-chevron-down"></span></a> 
+                    <ul class="nav child_menu">
+                      
+                      <li><a href="#">Icons</a></li>
+                      <li><a href="#">Tiện ích</a></li>
+                      <li><a href="#">Hộp thư đến</a></li>
+                      <li><a href="#">Lịch</a></li>
+                    </ul>
+                    
+                  </li>
+                  
+                  <li><a href="index.html"><i class="fa fa-laptop"></i> Trang đích <span class="label label-success pull-right">Coming Soon</span></a></li>
+                </ul>
+              </div>
+      
+            </div>
+            <!-- /sidebar menu -->
+      
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Cài đặt">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Toàn màn hình">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Khóa màn hình">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Đăng xuất" onclick="Logout()">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="ad_images/img.jpg" alt="">{{ tenND }}
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Hồ sơ </a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Cài đặt</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Trợ giúp</a></li>
+                    <li><a onclick="Logout()"><i class="fa fa-sign-out pull-right"></i>Đăng xuất</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="ad_images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="ad_images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="ad_images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="ad_images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>Xem tất cả thông báo</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Quản lý Người dùng</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm..." ng-model="Search">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button" style="background-color: #ec1c24; color:#FFF">GO</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Cài đặt 1</a>
+                          </li>
+                          <li><a href="#">Cài đặt 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <!--------------------------------------------------------------------------------------------->
+                  <!--------------------------------------------------------------------------------------------->
+                  <!--------------------------------------------------------------------------------------------->
+                  <!--------------------------------------------------------------------------------------------->
+                  <div class="x_content">
+                    <!-- start project list -->
+                    <div style=" margin-bottom: 10px;">
+                      <a class="text-muted font-13 m-b-30">
+                        <button class="btn btn-primary fa fa-plus" ng-click="Create()" data-toggle="modal" data-target="#exampleModalCreateUpdate">Tạo mới</button>
+                      </a>
+                      
+                    </div>
+                    <table id="datatable" class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th style="text-align: center;">Mã ND</th>
+                          <th style="text-align: center;">Tài khoản</th>
+                          <th style="text-align: center;">Email</th>
+                          <th style="text-align: center;">Họ tên</th>
+                          <th style="text-align: center;">Loại quyền</th>
+                          <th style="text-align: center;">Trạng thái</th>
+
+                          <th style="text-align: center;" colspan="3">Thao tác</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody ng-repeat="n in listNguoiDung | filter:Search">
+                        <tr>
+                          <td style="text-align: center;">{{ n.maND }}</td>
+                          <td style="text-align: center;">{{ n.taiKhoan }}</td>
+                          <td style="text-align: center;">{{ n.email }}</td>
+                          <td style="text-align: center;">{{ n.hoTen }}</td>
+                          <td style="text-align: center; color: red">{{ n.loaiQuyen }}</td>
+                          <td style="text-align: center;">{{ n.trangThai }}</td>
+
+                          <td ng-if="n.loaiQuyen == 'Khách hàng'" colspan="3" style="text-align: center;">
+                            <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#exampleModalCTND" ng-click="Detail(n.maND)">
+                              <i class="fa fa-folder"></i> Chi tiết
+                            </a>
+                          </td>
+                          <td ng-if="n.loaiQuyen != 'Khách hàng'" style="text-align: center;">
+                            <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#exampleModalCTND" ng-click="Detail(n.maND)">
+                              <i class="fa fa-folder"></i> Chi tiết
+                            </a>
+                          </td>
+                          <td ng-if="n.loaiQuyen != 'Khách hàng'" style="text-align: center;"> 
+                            <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#exampleModalCreateUpdate" ng-click="Update(n.maND)">
+                              <i class="fa fa-pencil"></i> Sửa
+                            </a>
+                          </td>
+                          <td ng-if="n.loaiQuyen != 'Khách hàng'" style="text-align: center;">
+                            <a href="#" class="btn btn-danger btn-xs" ng-click="Delete(n.maND)">
+                              <i class="fa fa-trash-o"></i> Xóa
+                            </a>
+                          </td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- end project list -->
+
+                  </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; align-items: center;">
+                  
+                  <button ng-disabled="currentPage == 1" ng-click="setPage(currentPage - 1)" > Trang trước </button>
+                  <button style="background-color: #0373ED; color: white;"> 
+                    {{  currentPage }} / {{  totalPages  }} 
+                  </button>
+                  <button ng-disabled="currentPage == totalPages" ng-click="setPage(currentPage + 1)"> Trang kế </button>
+                </div>
+
+              </div>
+              <!--xem chi tiết người dùng-->  
+              <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="detailModal" aria-hidden="true" id="exampleModalCTND">
+                <div class="modal-dialog" role="document" style="width: 900px; margin: 0px auto;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="height: 60px">
+                            <h5 class="modal-title" style="font-size: 24px; color: #000000">
+                              <b>Chi tiết Người dùng</b>
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -40px; color: red">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table id="datatable" class="table table-striped table-bordered table-hover">
+                          <thead>
+                            <tr style="color: #000;">
+                              <th style="text-align: center;">Tài khoản</th>
+                              <th style="text-align: center;">Mật khẩu</th>
+                              <th style="text-align: center;">Họ tên</th>
+                              <th style="text-align: center;">Ngày sinh</th>
+                              <th style="text-align: center;">Địa chỉ</th> 
+                              <th style="text-align: center;">SĐT</th>
+                            </tr>
+                          </thead>
+                          <tbody >
+                            <tr>
+                              <td style="text-align: center;">{{ taiKhoan }}</td>
+                              <td style="text-align: center;" ng-if="loaiQuyen == 'Khách hàng'" >
+                                {{ '*'.repeat(matKhau.length) }}
+                              </td>
+                              <td style="text-align: center;" ng-if="loaiQuyen != 'Khách hàng'">
+                                {{ matKhau }}
+                              </td>
+                              <td style="text-align: center;">{{ hoTen }}</td>
+                              <td style="text-align: center;">{{ ngaySinh | date:'dd/MM/yyyy'}}</td>
+                              <td style="text-align: center;">{{ diaChi }}</td>
+                              <td style="text-align: center;">{{ sdt }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <!--tạo mới người dùng -->  
+              <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="exampleModalCreateUpdate" >
+                <div class="modal-dialog" role="document" style="width: 900px; margin: 0px auto;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="height: 60px">
+                            <h5 class="modal-title" style="font-size: 24px; color: #000000"><b>{{ btnText }} Nhân viên</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -40px; color: red">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form novalidate name="frmNguoiDung" id="frmNguoiDung" class="form-horizontal row-border">
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Tài khoản :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="text" id="idTaiKhoan" class="form-control" name="nameTaiKhoan" ng-model="taiKhoan" />
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Email :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="text" id="idEmail" class="form-control" name="nameEmail" ng-model="email" /> 
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Mật khẩu :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="text" id="idMatKhau" class="form-control" name="nameMatKhau" ng-model="matKhau" /> 
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Họ tên :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="text" id="idHoTen" class="form-control" name="nameHoTen" ng-model="hoTen" /> 
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Ngày sinh :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="date" id="idNgaySinh" class="form-control" name="nameNgaySinh" ng-model="ngaySinh" value="{{ngaySinh | date:'yyyy-MM-dd'}}"/> 
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Địa chỉ :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="text" id="idDiaChi" class="form-control" name="nameDiaChi" ng-model="diaChi" /> 
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> SĐT :</label>
+                                          <div class="col-md-8"> 
+                                            <input type="text" id="idSDT" class="form-control" name="nameSDT" ng-model="sdt" /> 
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Loại quyền :</label>
+                                          <div class="col-md-8"> 
+                                            <select class="form-control" ng-model="loaiQuyen"> 
+                                              <option value="Nhân viên">Nhân viên</option>
+                                              <option value="Quản trị">Quản trị</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 control-label" for="input17"> Trạng thái :</label>
+                                          <div class="col-md-8"> 
+                                            <select class="form-control" ng-model="trangThai"> 
+                                              <option value="0">0</option>
+                                              <option value="1">1</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="" style="width: 40px; height: 30px; margin: 0px auto;">
+                                      <span id="save" class="btn btn-success margin-right-btn" ng-click="CreateUpdate()">
+                                        <i class="icon-save"></i> {{ btnText }}
+                                      </span> 
+                                    </div>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Trang Admin của <a href="index.html">Phạm Văn Phú</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+  </body>
+</html>

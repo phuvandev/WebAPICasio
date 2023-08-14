@@ -1,0 +1,223 @@
+<html ng-app="AppBanDongHoCasio" ng-controller="ProductDetailCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<title >ĐỒNG HỒ {{dataProductDetail.tenDSP}} {{dataProductDetail.tenSP}} - Chính Hãng</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/product-detail.css" />
+		<link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+
+		<script src="Js/jquery-3.6.0.min.js"></script>
+
+		<script src="angular/angular.min.js"></script>
+		<script src="angular/global.js"></script>
+		<script src="angular/product-detail.js"></script>
+
+	</head>
+	<body>
+		<div id="frame">
+	<!---------------------------------------HEADER--------------------------------------------------------->
+			<div id="header">
+				<div id="header-top">
+					<div id="frame_ls">
+						<div id="login-signup">
+							<a id="text-ls" href="login.html"><i class="fas fa-user"></i>Đăng nhập/Đăng ký</a>
+							<a href="" id="text-dx"></a>
+						</div>
+					</div>
+				</div>
+				<div id="header-middle">
+					<a href="index.html"><img id="anh-logo" src="cus_images/logoVPW.png" /></a>
+					<img id="anh-logoNCC" src="cus_images/logoNCC.png" />
+
+					<div id="icon-search">
+						<i class="fa fa-search"></i>
+					</div>
+
+					<input id="text-search" type="text" placeholder="Tìm kiếm sản phẩm" ng-model="searchByName"/>
+					<input id="btn-search" type="submit" value="Tìm kiếm" ng-click="Search(searchByName)"/>
+
+					<div id="contact">
+						<img id="anh-tainghe" src="cus_images/img-phone.png" />
+						<a href="tel:1900111222">Liên hệ</a>
+						<a href="tel:1900111222">1900.111.222</a>
+					</div>
+
+					<div id="cart">
+						<a href="cart.html"><img id="anh-giohang" src="cus_images/img-cart.png" /></a>
+						<a class="info-cart" id="giohang" href="cart.html">Giỏ hàng </a>
+						<a class="info-cart" id="soluong">{{soluong}}</a>
+					</div>
+				</div>
+				<!----------------------------------------MENU--------------------------------------------------->
+				<div id="menu">
+					<div id="main-menu">
+						<ul ng-repeat="s in listMenu">
+							<li ng-if="$index == 0"> 
+								<a id ="menu1">
+									<i class="fas fa-bars"></i>
+									<span>{{s.tenMenu}}</span>
+								</a>							
+								<ul id="subcate">
+									<li><a href="dongsanpham.html?id=1">G-SHOCK</a></li>
+									<li><a href="dongsanpham.html?id=2">BABY-G</a></li>
+									<li><a href="dongsanpham.html?id=3">EDIFICE</a></li>
+									<li><a href="dongsanpham.html?id=4">SHEEN</a></li>
+									<li><a href="dongsanpham.html?id=5">GENERAL</a></li>
+									<li><a href="dongsanpham.html?id=6">PRO TREK</a></li>
+								</ul>
+							</li>
+							<li ng-if="$index > 0">
+								<a href="{{s.link}}">{{s.tenMenu}}</a>
+							</li>
+						</ul>
+					</div>    
+				</div>
+			</div>	
+<!----------------------------------------------Container---------------------------------------------->
+			<div id="container">
+				<div id="move">	
+					<a id="icon-home" href="index.html"><i class="fas fa-home"></i></a> 
+					<a class="text" href="index.html">TRANG CHỦ</a> 
+					<a id="icon-move"><i class="fas fa-angle-right"></i></a>
+					<a class="text" href="dongsanpham.html?id={{dataProductDetail.maDSP}}">{{dataProductDetail.tenDSP}}</a>
+					<a id="icon-move"><i class="fas fa-angle-right"></i></a>
+					<a class="text" href="#">{{dataProductDetail.tenSP}}</a>		
+				</div>	
+<!------------------	Content 1 		----------------------------------->					
+				<div id="content1-dt">
+					
+<!--------------Phần nhấp ảnh---------------------------->
+					<div id="product-segment">
+						<!--Phân khúc sản phẩm-->
+						<div class="segment" ng-repeat="d in dataProductPicDetail">
+							<button id="click-segment" ng-click="showProduct(d)">
+								<img ng-if="d.anh != 0" id="pic-segment" ng-src="cus_images/ACT/{{d.anh}}" />
+							</button>
+						</div>
+					</div>
+
+					<div id="product-show">
+						<img id="show-segment" ng-src="cus_images/ACT/{{selectedImage}}" />	
+					</div>
+<!--------------Phần nhấp ảnh---------------------------->
+
+					<div id="product-info-dt">
+						<div id="product-name-dt">
+							<a id="text-title-dt"><b>Đồng hồ {{dataProductDetail.tenSP}} - Chính Hãng</b></a>
+							<a id="text1-dt">Tên sản phẩm : </a> <a id="text2-dt"><b> {{dataProductDetail.tenSP}} </b></a>
+							<a id="text3-dt">Giá:</a> <a id="text4-dt"><b>{{dataProductDetail.giaSauKhiGiam | number: 1.0-3}}đ</b></a>
+						</div>
+						<div id="product-info-form">
+							<span>Số lượng: </span> &nbsp
+							<input id="number" type="number" min="1" max="{{dataProductDetail.tongSL}}" ng-model="SL"/>
+							<button type="button" id="addToCart" ng-click= "buyProduct(dataProductDetail, SL)">
+								<span>THÊM VÀO GIỎ HÀNG</span>
+								<p>Và xem thêm nhiều sản phẩm khác</p>
+							</button>
+						</div>
+						<!----------	Thông tin thêm 	--------------------->
+						<div id="product-info-other">
+							<div id="info-other">
+								<!-- Quy định bảo hành -->
+								<i class="fas fa-info"></i><a href="lienhe.html">Quy định bảo hành</a>
+							</div>
+							<div id="info-other">
+								<!-- Trung tâm bảo hành -->
+								<i class="fas fa-info"></i><a href="lienhe.html">Trung tâm bảo hành</a>
+							</div>
+							<div id="info-other">
+								<!-- Quy định đổi trả -->
+								<i class="fas fa-info"></i><a href="lienhe.html">Quy định đổi trả</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!------------------	Content 2 		----------------------------------->
+				<div id="content2-dt">
+					<div id="left">
+						<div id="tab">
+							<div id="tab-box">
+								<a>Chi tiết</a>
+							</div>
+						</div>
+
+						<div id="product-intro">
+							<!-- Giới thiệu sản phẩm -->
+							<br /><a id="text-pi1">Đồng hồ</a> <a id="text-pi2" href="">{{dataProductDetail.tenDSP}}</a> <a id="text-pi3" href="">{{dataProductDetail.tenSP}}</a>
+							<br />
+							<p>{{dataProductDetail.moTa}}</p>
+						</div>
+					</div>
+
+					<div id="right">
+						<table border="1" cellpadding="10" cellspacing="0" width="100%">
+							<tr style="height: 50px;">
+								<th style="color: #FF0000; background-color: #F8F9FA;" colspan="2">Thông số kỹ thuật</th>
+							</tr>
+							<tr ng-repeat="a in dataSpecification" >
+								<td style="font-weight: bold; word-wrap: break-word; max-width: 90px;">
+									{{a.tenTS}}
+								</td>
+								<td style=" word-wrap: break-word; max-width: 90px;">
+									{{a.moTa}}
+								</td>
+							</tr>
+						</table>
+						  
+					</div>
+				</div>
+
+			</div>	
+
+			<!-- <script src="js/java_ChiTietSanPham.js"> </script>-->
+			<div id="footer">
+				<div id="info-website">
+					<!--info 1-->
+					<div id="info1">
+						<span><b>CASIO VĂN PHÚ</b></span><br />
+						<a>Địa chỉ: Số 2/24/441, Phường Bình Hàn, Thành phố Hải Dương.</a><br /><br />
+						<a>Tư vấn mua hàng (8:00-17:00): 1900.111.222 (Phím 1) </a><br /><br />
+						<a>Chăm sóc khách hàng: 1900.111.222 (Phím 2) </a><br /><br />
+						<a>Gmail: phuphamvan411@gmail.com</a>
+					</div>
+					<!--info 2-->
+					<div id="info2">
+						<span><b>THÔNG TIN</b></span><br />
+						<a href="gioithieu.html">Giới thiệu</a><br /><br />
+						<a href="#">Lịch sử hình thành </a><br /><br />
+						<a href="#">Tầm nhìn và sứ mệnh</a><br /><br />
+						<a href="#">Website Casio</a>
+					</div>
+					<!--info 3-->
+					<div id="info2">
+						<span><b>HỖ TRỢ</b></span><br />
+						<a href="#">Hướng dẫn thanh toán</a><br /><br />
+						<a href="#">Hướng dẫn mua hàng online</a><br /><br />
+						<a href="#">Chính sách khách hàng thân thiết</a><br /><br />
+					</div>
+					<!--info 4-->
+					<div id="info2">
+						<span><b>CHÍNH SÁCH</b></span><br />
+						<a href="#">Điều khoản dịch vụ</a><br /><br />
+						<a href="#">Quy định đổi trả</a><br /><br />
+						<a href="#">Quy định bảo hành</a><br /><br />
+						<a href="#">Trung tâm bảo hành</a><br /><br />
+						<a href="#">Chính sách bảo mật</a>
+					</div>
+					<img id="anh-logo-casio" src="cus_images/casio-authorized.png" />
+					<img id="anh-pay" src="cus_images/payment.png" />
+				</div>
+			</div>
+			<div id="banquyen">
+				<div id="copyright">
+					<a href=""><img id="logo-banquyen" src="cus_images/logoVPW.png" /></a>
+					<a>@Bản quyền thuộc về CASIO Văn Phú - Developed by VP.</a>
+				</div>
+			</div>
+			
+			
+<!---------------------	footer	------------------------------------------->
+			
+				
+	</body>
+</html>

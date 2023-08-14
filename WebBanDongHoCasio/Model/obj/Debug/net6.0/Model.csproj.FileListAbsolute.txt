@@ -1,0 +1,12 @@
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\bin\Debug\net6.0\Model.deps.json
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\bin\Debug\net6.0\Model.dll
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\bin\Debug\net6.0\Model.pdb
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.dll
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\refint\Model.dll
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\Model.pdb
+E:\BTL-DoAn\BTL_API\WebBanDongHoCasio\Model\obj\Debug\net6.0\ref\Model.dll

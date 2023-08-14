@@ -1,0 +1,146 @@
+/*Container giỏ hàng*/
+#container-cart{
+	width: 1004px;
+	min-height: 200px;
+	margin: 0px auto;	
+	margin-top: 20px;
+}
+/*nội dung giỏ hàng*/
+#container-cart h3{	
+	background-color: #EEE;
+	padding: 15px 0px 15px 20px;
+	height: 52px;
+	margin: 0px;
+	border-radius: 8px;
+	font-size: 20px;
+	font-weight: bold;
+}
+/*Định dạng bảng*/
+#container-cart table{
+	border: 1px solid #CCC;
+	margin: 20px 30px 0px 0px;
+	width: 100%;
+	line-height: 50px;
+	background-color: #EEE;
+
+}
+/*Định dạng hàng tiêu đề*/
+#container-cart th{
+	text-align: center;
+}
+/*Định dạng sản phẩm---------------------------------------------*/
+#container-cart td{
+	height: 110px;
+	border-right: 0.5px solid #CCC;
+	border-bottom: 0.5px solid #CCC;
+	background-color: #FFF;
+}
+/*Định dạng cột 1 và 2 và 3*/
+#container-cart td:nth-child(1), td:nth-child(2), td:nth-child(3){
+	text-align: center;
+}
+#container-cart td:nth-child(2) img {
+	width: 100px;
+	height: 90px;
+}
+/*Định dạng cột 4 và 6*/
+#container-cart td:nth-child(4), td:nth-child(6) {
+	text-align: center;
+	color: red;
+}
+
+/*Định dạng cột 5*/
+#container-cart td:nth-child(5){
+	text-align: center;
+}
+#container-cart td:nth-child(5) .nutgiam,
+#container-cart td:nth-child(5) .txtsoluong,
+#container-cart td:nth-child(5) .nuttang {
+    display: inline-block;/*phần tử có thể xếp cạnh nhau trên cùng một dòng.*/
+    vertical-align: middle; /*căn giữa các phần tử input với các phần tử khác trên cùng một dòng.*/
+    margin-right: -5px; 
+}
+#container-cart td:nth-child(5) input[type='text']{
+	text-align: center;
+	line-height: 24px;
+	width: 100px;
+	height: 34px;
+	padding-top: 2px;
+	border: 0px;
+	border-radius: 3px;
+	color: #000000;
+	background-color: #E9ECEF;
+}
+#container-cart td:nth-child(5) input[type='text']:focus{
+	outline: none;
+}
+#container-cart td:nth-child(5) input[type='button'] {
+	text-align: center;
+	width: 40px;
+	height: 33px;
+	line-height: 24px;
+	border: 0px;
+	border-radius: 3px;
+	background-color: #EC1C24;
+	color: #FFF;
+	font-weight: bold;
+}
+#container-cart td:nth-child(5) input[type='button']:hover{
+	background-color: #007BFF;
+	transition: 0.4s;
+}
+/*Định dạng cột 7*/
+#container-cart td:nth-child(7){
+	width: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.thungrac{
+	width: 30px;
+	height: 30px;
+}
+.thungrac:hover{
+	opacity: 0.7;
+	height: 33px;
+}
+/*nội dung mua hàng - pay cart*/
+#pay-cart {
+	margin-top: 50px;
+	width: 100%;
+	height: 60px;
+	float: left;
+	margin-bottom: 30px;
+}
+
+/*#pay-cart a{
+	color: black;
+	font-size: 22px;
+	padding-left: 750px;
+}
+#pay-cart span{
+	float: right;
+	margin-right: 6px;
+	font-size: 22px;
+}
+#tong{
+	color: red !important;
+}*/
+#option-cart {
+	width: 100%;
+	height: 36px;
+	margin-top: 10px;
+	padding-left: 86px;
+}
+.button {
+	color: #FFF;
+	background-color: #EC1C24;
+	width: 260px; /*24.7%*/
+	height: 100%;
+	margin-right: 20px;
+	border: 0px;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: red;
+}

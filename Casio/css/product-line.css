@@ -1,0 +1,189 @@
+
+/*content 1-------------------*/
+.content1 {
+	width: 1500px;
+	height: 440px;
+	margin: 0px auto;
+	background-color: #000000;
+}
+.c1-left{
+	width: 840px;
+	height: 100%;
+	float: left;
+}
+.c1-pic {
+	width: 800px;
+	height: 400px;
+	margin-top: 20px;
+	margin-left: 20px;
+	border-radius: 14px;
+	overflow: hidden;	/* làm ảnh ko bị tràn khi hover chuột vào*/
+	position: relative;
+	z-index: 1; /*Hiển thị ưu tiên 1 */
+}
+#pic_large {
+	width: 800px;
+	height: 400px;
+	/* hover chuột lên ảnh nhờ transform: scale -> nở ảnh ra so với kích thước ban đầu*/
+	transform: scale(1); 
+	/* 0.5s-> Độ trễ của chuyển động. Khi đặt giá trị cao hơn độ trễ càng lớn*/
+	transition: all 0.5s; 
+}
+#pic_large:hover {
+	transform: scale(1.2); /* phóng to lên 10% */
+	opacity: 0.9; /* làm mờ ảnh đi khi hover */
+}
+
+#pic_name {
+	position: absolute;
+	font-family: Fantasy;
+	left: 50px;
+	bottom: 0px;
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 60px;
+	transition: all 0.5s; 
+	opacity: 0;
+}
+.c1-pic:hover #pic_name{
+	bottom: 30%;
+	opacity: 1;
+}
+
+#c1-right{
+	width: 660px;
+	height: 100%;
+	float: left;
+
+}
+#c1-text {
+	width: 580px;
+	height: 360px;
+	margin: 40px;
+}
+#c1-text p {
+	font-family: verdana, arial;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+#c1-text a {
+	font-family: verdana, arial;
+	font-size: 14px;
+	color: #FF0000;
+}
+#c1-text a:hover {
+	color: #FFFFFF;
+	font-size: 14.4px;
+	font-weight: bold;
+}
+#c1-text ul li{
+	color: #FFFFFF;
+}
+
+/*content 2-------------------*/
+#content2 {
+	width: 1330px;
+	min-height: 64px;
+	padding-top: 20px;
+	margin: 0px auto;
+}
+
+#product-title{
+	width: 1094px;
+	height: 44px;
+	background-color: #FFF;
+	margin: 0px 0px 20px 116px;
+	font-family: 'Times New Roman';
+	border-bottom: 2px solid #F58220;
+}
+#product-title span {
+	font-size: 22px;
+	color: #454545;
+	font-weight: bold;
+	line-height: 50px;
+	padding-left: 4px;
+}
+
+.frame-products {
+	width: 1180px;
+	min-height: 320px;
+	display: flex; /*các phần tử con bên trong sẽ được hiển thị theo cách mà mình định nghĩa*/
+  	flex-wrap: wrap; /*cho phép các phần tử con chuyển sang hàng mới nếu không đủ chỗ trên hành hiện tại.*/
+	margin: 0px auto;
+	padding-left: 40px;
+	margin-bottom: 40px;
+}
+.products{
+	width: 206px;
+	height: 300px;
+	margin-right: 16px;
+	margin-top: 20px;
+	float: left;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	position: relative;
+}
+.click-buy-now{
+	position: absolute;
+	top: 220px;
+	left: 26px;
+	width: 150px;
+	height: 30px;
+	border: none;
+	background-color: #EC1C24;
+	color: #FFFFFF;
+	cursor: pointer;
+	opacity: 0;
+	transition: 0.5s;
+}
+.products:hover{
+	transition: 0.4s ease-in-out;
+	border: 1px solid #EC1C24;
+}
+.products:hover .click-buy-now{
+	opacity: 1;
+	top: 194px;
+}
+
+#product-status{
+	width: 50px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	padding-left: 14px;
+	border-radius: 10px 0px 0px 10px;
+	background-color: green;
+}
+#product-status a{
+	font-size: 12px;
+	line-height: 20px;
+	color: #F9F9F9;
+}
+.products img{
+	width: 170px;
+	height: 190px;
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#product-info{
+	width: 100%;
+	height: 70px;
+	margin-top: 24px;
+	text-align: center;
+}
+#product-name {
+	color: #000000;
+	font-size: 19px;
+	font-family: "Times New Roman";
+}
+#product-name:hover {
+	color: #EC1C24;
+}
+#price{
+	color: #EC1C24 !important;
+	font-size: 19px;
+	font-weight: bold;	
+}
